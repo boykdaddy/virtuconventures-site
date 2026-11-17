@@ -16,3 +16,8 @@ a:hover{color:#bf00ff}
 .mid-l{position:fixed;left:24px;top:50%;transform:translateY(-50%);line-height:1.4;z-index:2}
 .bot-l{position:fixed;left:24px;bottom:24px;z-index:2}
 @media (max-width:600px){.clock{gap:28px}.panel{right:24px;max-width:none}}
+#v,.v-fallback{opacity:0;transition:opacity 1.8s ease}
+#v.on,.v-fallback.on{opacity:1}
+.fade{opacity:0;transition:opacity 1.4s ease}
+body.ready .fade{opacity:1}
+@media (prefers-reduced-motion:reduce){#v,.v-fallback,.fade{transition-duration:.3s}}

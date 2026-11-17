@@ -25,8 +25,9 @@ function fallback(canvas) {
   const img = document.createElement('img');
   img.src = new URL('./v.svg', import.meta.url).href;
   img.alt = 'Virtucon Ventures';
-  img.className = 'v-fallback';
+  img.className = 'v-fallback on';
   canvas.replaceWith(img);
+  setTimeout(() => document.body.classList.add('ready'), 1400);
 }
 
 export function mountV(canvas) {
@@ -73,11 +74,18 @@ export function mountV(canvas) {
   const still = location.hash === '#still';
   const speed = still ? 0 : reduced ? 0.12 : 0.55; // radians per second
   let last = performance.now();
+  let shown = false;
   function frame(now) {
     const dt = Math.min((now - last) / 1000, 0.1);
     last = now;
-    v.rotation.y += speed * dt;
+    v.rotation.y -= speed * dt; // reversed spin direction (Nov 2026)
     renderer.render(scene, camera);
+    if (!shown) {
+      shown = true;
+      // Logo fades in first; everything else follows.
+      requestAnimationFrame(() => canvas.classList.add('on'));
+      setTimeout(() => document.body.classList.add('ready'), 1400);
+    }
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);

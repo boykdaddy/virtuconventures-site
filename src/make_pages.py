@@ -2,7 +2,8 @@
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
-DESC = "Virtucon Ventures builds and operates companies in consumer, health, and financial technology."
+DESC = "Virtucon Ventures builds and operates consumer internet companies."
+CITY = "Miami Beach, FL"
 EMAIL = "info@virtuconventures.com"
 
 
@@ -28,7 +29,7 @@ def head(title, r):
 """
 
 
-CLOCK = '<div class="clock"><span id="clock-date"></span><span id="clock-time"></span></div>\n'
+CLOCK = '<div class="clock fade" title="Miami (Eastern Time)"><span id="clock-date"></span><span id="clock-time"></span></div>\n'
 V = '<canvas id="v" aria-label="Virtucon Ventures logo"></canvas>\n'
 def scripts(r):
     return f'<script src="{r}assets/clock.js"></script>\n<script type="module" src="{r}assets/v3d.js"></script>\n'
@@ -37,20 +38,20 @@ END = "</body>\n</html>\n"
 R, U = "./", "../"  # paths from the root page and from one folder down
 
 pages = {
-    "index.html": head("Virtucon Ventures", R) + CLOCK + V + f"""<div class="foot-c up">
+    "index.html": head("Virtucon Ventures", R) + CLOCK + V + f"""<div class="foot-c up fade">
   <span>Virtucon Ventures</span>
   <a href="{R}info/">Info</a>
 </div>
 """ + scripts(R) + END,
 
-    "info/index.html": head("Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel">
+    "info/index.html": head("Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel fade">
   <nav class="links up"><a href="{U}incubations/">Incubations</a><a href="{U}contact/">Contact</a></nav>
   <p class="body">{DESC}</p>
   <a class="up" href="{U}">Home</a>
 </div>
 """ + scripts(U) + END,
 
-    "incubations/index.html": head("Incubations | Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel">
+    "incubations/index.html": head("Incubations | Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel fade">
   <span class="up">Virtucon Incubations</span>
   <div class="list body">
     <span>Holy Grail &mdash; DTC</span>
@@ -61,9 +62,10 @@ pages = {
 </div>
 """ + scripts(U) + END,
 
-    "contact/index.html": head("Contact | Virtucon Ventures", U) + f"""<div class="top-l up">Virtucon Ventures</div>
-<div class="mid-l">General correspondence: <a href="mailto:{EMAIL}">{EMAIL}</a></div>
-<a class="bot-l up" href="{U}info/">Close</a>
+    "contact/index.html": head("Contact | Virtucon Ventures", U) + f"""<div class="top-l up fade">Virtucon Ventures<br>{CITY}</div>
+<div class="mid-l fade">General correspondence: <a href="mailto:{EMAIL}">{EMAIL}</a></div>
+<a class="bot-l up fade" href="{U}info/">Close</a>
+<script src="{U}assets/clock.js"></script>
 """ + END,
 
     "404.html": head("Virtucon Ventures", "/") + """<div class="foot-c up">
