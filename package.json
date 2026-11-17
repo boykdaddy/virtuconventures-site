@@ -1,0 +1,11 @@
+{
+  "name": "virtuconventures-site",
+  "private": true,
+  "scripts": {
+    "build": "python3 src/make_pages.py && esbuild src/v3d.js --bundle --minify --format=esm --outfile=assets/v3d.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "three": "^0.187.0"
+  }
+}

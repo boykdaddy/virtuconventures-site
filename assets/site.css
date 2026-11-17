@@ -1,0 +1,18 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#050505;color:#e6e6e6}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.3px;line-height:1.2;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#bf00ff}
+.up{text-transform:uppercase}
+#v{position:fixed;inset:0;width:100vw;height:100vh;display:block}
+.v-fallback{position:fixed;left:50%;top:50%;width:120px;transform:translate(-50%,-50%)}
+.clock{position:fixed;top:24px;left:0;right:0;display:flex;justify-content:center;gap:48px;font-weight:500;font-variant-numeric:tabular-nums;z-index:2}
+.foot-c{position:fixed;bottom:24px;left:0;right:0;text-align:center;display:flex;flex-direction:column;gap:12px;z-index:2}
+.panel{position:fixed;left:24px;bottom:24px;max-width:360px;display:flex;flex-direction:column;gap:22px;z-index:2}
+.links{display:flex;gap:48px}
+.body{font-size:14px;letter-spacing:.35px;line-height:1.42}
+.list{display:flex;flex-direction:column;gap:6px}
+.top-l{position:fixed;top:24px;left:24px;line-height:1.4;z-index:2}
+.mid-l{position:fixed;left:24px;top:50%;transform:translateY(-50%);line-height:1.4;z-index:2}
+.bot-l{position:fixed;left:24px;bottom:24px;z-index:2}
+@media (max-width:600px){.clock{gap:28px}.panel{right:24px;max-width:none}}
