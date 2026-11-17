@@ -42,7 +42,7 @@ export function mountV(canvas) {
 
   const scene = new Scene();
   const camera = new PerspectiveCamera(30, 1, 0.1, 100);
-  camera.position.set(0, 6.5, 26.5);
+  camera.position.set(0, -6.5, 26.5); // viewed from slightly below
   camera.lookAt(0, 0, 0);
 
   const material = new MeshStandardMaterial({ color: PURPLE, roughness: 0.42, metalness: 0.05 });
@@ -53,10 +53,10 @@ export function mountV(canvas) {
 
   scene.add(new AmbientLight(0xffffff, 0.55));
   const key = new DirectionalLight(0xffffff, 2.4);
-  key.position.set(4, 6, 8);
+  key.position.set(4, -6, 8);
   scene.add(key);
   const fill = new DirectionalLight(0xffffff, 0.7);
-  fill.position.set(-6, -2, 4);
+  fill.position.set(-6, 4, 4);
   scene.add(fill);
 
   function resize() {
