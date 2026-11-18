@@ -3,9 +3,9 @@
 Plain static site, served by GitHub Pages from the `main` branch root. No WordPress, no CMS, no server.
 
 ## Files
-- `index.html`, `info/`, `incubations/`, `contact/`, `404.html` — the pages (generated)
+- `index.html`, `info/`, `portfolio/`, `contact/`, `404.html` — the pages (generated)
 - `assets/` — CSS, clock script, logo (`v.svg`), favicon, share image, bundled 3D logo (`v3d.js`)
-- `src/make_pages.py` — page text lives here (description, incubations list, contact email). Edit this, not the HTML.
+- `src/make_pages.py` — page text lives here (description, portfolio list, contact email). Edit this, not the HTML.
 - `src/v3d.js` — the spinning 3D "V" (Three.js). Colour `#BF00FF` on `#050505`.
 
 ## Changing the site

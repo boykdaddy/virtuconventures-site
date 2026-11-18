@@ -45,18 +45,18 @@ pages = {
 """ + scripts(R) + END,
 
     "info/index.html": head("Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel fade">
-  <nav class="links up"><a href="{U}incubations/">Incubations</a><a href="{U}contact/">Contact</a></nav>
+  <nav class="links up"><a href="{U}portfolio/">Portfolio</a><a href="{U}contact/">Contact</a></nav>
   <p class="body">{DESC}</p>
   <a class="up" href="{U}">Home</a>
 </div>
 """ + scripts(U) + END,
 
-    "incubations/index.html": head("Incubations | Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel fade">
-  <span class="up">Virtucon Incubations</span>
+    "portfolio/index.html": head("Portfolio | Virtucon Ventures", U) + CLOCK + V + f"""<div class="panel fade">
+  <span class="up">Virtucon Portfolio</span>
   <div class="list body">
     <span>Holy Grail &mdash; DTC</span>
-    <span>Grail &mdash; Telehealth</span>
-    <span>OneTap &mdash; Fintech</span>
+    <span>RemiMD &mdash; Telehealth</span>
+    <span>OneTapCash &mdash; Fintech</span>
   </div>
   <a class="up" href="{U}info/">Close</a>
 </div>
